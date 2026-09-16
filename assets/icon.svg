@@ -1,0 +1,22 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141b25"/>
+      <stop offset="1" stop-color="#263346"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2d47f"/>
+      <stop offset="1" stop-color="#bd8d34"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="50" fill="url(#bg)" stroke="#d7ad55" stroke-width="8"/>
+  <path d="M62 100 L128 55 L194 100 Z" fill="url(#gold)"/>
+  <rect x="69" y="103" width="118" height="16" rx="4" fill="#d7ad55"/>
+  <rect x="78" y="119" width="15" height="65" rx="4" fill="#ead9aa"/>
+  <rect x="104" y="119" width="15" height="65" rx="4" fill="#ead9aa"/>
+  <rect x="137" y="119" width="15" height="65" rx="4" fill="#ead9aa"/>
+  <rect x="163" y="119" width="15" height="65" rx="4" fill="#ead9aa"/>
+  <rect x="66" y="184" width="124" height="17" rx="4" fill="#d7ad55"/>
+  <path d="M48 194 C29 171 28 137 45 112 C44 145 54 164 70 179" fill="none" stroke="#d7ad55" stroke-width="8" stroke-linecap="round"/>
+  <path d="M208 194 C227 171 228 137 211 112 C212 145 202 164 186 179" fill="none" stroke="#d7ad55" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,28 @@
+name: Godot Smoke Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Static checks
+        run: python3 tools/static_check.py
+
+      - name: Install Godot 4.7.2
+        run: bash tools/install_godot_codespaces.sh
+
+      - name: Godot import and runtime smoke test
+        env:
+          GODOT_BIN: /home/runner/.local/bin/godot
+        run: bash tools/smoke_test.sh

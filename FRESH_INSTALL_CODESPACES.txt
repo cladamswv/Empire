@@ -1,0 +1,25 @@
+EMPIRES RISE v0.4 — FRESH INSTALL IN CODESPACES
+
+1. Create/open the NEW GitHub repo in Codespaces.
+2. Upload Empires-Rise-v0.4-Stylized-Prototype-GitHub-Ready.zip to the repo root.
+3. Paste this block into the Codespaces terminal:
+
+set -euo pipefail
+ZIP="Empires-Rise-v0.4-Stylized-Prototype-GitHub-Ready.zip"
+WORK="/tmp/empires-rise-v04"
+rm -rf "$WORK"
+mkdir -p "$WORK"
+unzip -q "$ZIP" -d "$WORK"
+find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name "$ZIP" -exec rm -rf {} +
+cp -a "$WORK/Empires-Rise-v0.4-Stylized-Prototype/." .
+rm -rf "$WORK"
+chmod +x tools/*.sh tools/*.py
+python3 tools/static_check.py
+bash tools/install_godot_codespaces.sh
+export PATH="$HOME/.local/bin:$PATH"
+bash tools/smoke_test.sh
+git add -A
+git commit -m "Install Empires Rise v0.4 stylized prototype"
+git push
+
+echo "Install complete. GitHub Actions will run the Android APK workflow."
